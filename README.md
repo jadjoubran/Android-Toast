@@ -2,3 +2,7 @@ Android-Toast
 =============
 
 An HTML5 replication of the Native Android Toast http://developer.android.com/guide/topics/ui/notifiers/toasts.html
+
+To use Android toast, simply include src/css/toast.css and src/js/toast.js to your project and call the android_toast javascript function
+
+	android_toast('Your message here <em>Blue highlighting here</em>');
