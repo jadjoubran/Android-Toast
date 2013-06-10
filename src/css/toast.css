@@ -1,0 +1,81 @@
+#android_toast{
+	position: fixed;
+	bottom: 12%;
+	left: 50%;
+	width: 80%;
+	background-color: rgb(48, 52, 55);
+	color: rgb(245, 245, 245);
+	font-size: 13px;
+	padding: 5px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	opacity: 0.95;
+	-webkit-box-shadow:  1px 2px 2px 1px rgba(34, 34, 34, 1);
+	box-shadow:  1px 2px 2px 1px rgba(34, 34, 34, 1);
+	text-align: center;
+	font-family: Roboto, sans-serif;
+}
+
+/* For blue text (usually used at the end) */
+#android_toast em{
+	color: rgb(81, 180, 210);
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+.android_toast_fadein{
+	animation: android_toast_fadein 1s ease;
+	-webkit-animation: android_toast_fadein 1s ease;
+}
+
+.android_toast_fadeout{
+	animation: android_toast_fadeout 1s ease;
+	-webkit-animation: android_toast_fadeout 1s ease;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@keyframes android_toast_fadein{
+	from {
+		opacity: 0;
+		-webkit-opacity: 0;
+	}
+	to {
+		opacity: 0.95;
+		-webkit-opacity: 0.95;
+	}
+}
+
+@-webkit-keyframes android_toast_fadein{
+	from {
+		opacity: 0;
+		-webkit-opacity: 0;
+	}
+	to {
+		opacity: 0.95;
+		-webkit-opacity: 0.95;
+	}
+}
+
+@keyframes android_toast_fadeout{
+	from {
+		opacity: 0.95;
+		-webkit-opacity: 0.95;
+	}
+	to {
+		opacity: 0;
+		-webkit-opacity: 0;
+	}
+}
+
+@-webkit-keyframes android_toast_fadeout{
+	from {
+		opacity: 0.95;
+		-webkit-opacity: 0.95;
+	}
+	to {
+		opacity: 0;
+		-webkit-opacity: 0;
+	}
+}

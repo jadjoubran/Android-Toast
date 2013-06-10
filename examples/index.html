@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Android Toast Example</title>
+	<link rel="stylesheet" href="../src/css/toast.css" type="text/css">
+</head>
+<body>
+
+	<h1>Android Toast Example</h1>
+
+	<a href="#" id="example1">Click here</a> for example 1
+	<br />
+	<br />
+	<a href="#" id="example2">Click here</a> for example 2
+	<br />
+	<br />
+	Note that the example is best viewed at a width smaller than 600px (to simulate a phone device)
+	<br />
+	<br />
+	And whenever you resize the browser while the toast is open, the positionning will get distorted.
+	<br />
+	<br />
+
+
+	<!-- You can use jQuery instead of zepto, they both work -->
+	<script src="../vendor/zepto.min.js"></script>
+	<script src="../src/js/toast.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#example1").on('click', toast_example1);
+		$("#example2").on('click', toast_example2);
+	});
+
+
+	function toast_example1(){
+		android_toast('Please check your connection and try again.');
+	}
+
+	function toast_example2(){
+		android_toast('Connected to Wi-Fi network <em>Router Name</em>');
+	}
+	</script>
+</body>
+</html>
