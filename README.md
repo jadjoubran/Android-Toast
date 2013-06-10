@@ -12,5 +12,5 @@ To use Android toast, simply include src/css/toast.css and src/js/toast.js to yo
 
 http://www.eTobb.com 's first Open Source contribution.
 
-Developed by Jad Joubran [@JoubranJad](https://twitter.com/joubranjad)
+Developed by Jad Joubran [@JoubranJad](https://twitter.com/joubranjad)  
 Design replicated by Nader Dagher  [@naderdagher](https://twitter.com/naderdagher)
