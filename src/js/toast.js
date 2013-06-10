@@ -1,3 +1,9 @@
+/*
+     toast.js
+     (c) 2013 Jad Joubran, Nader Dagher
+     toast.js may be freely distributed under the MIT license.
+*/
+
 function android_toast( message ){
 	if ( ! message ){
 		return false;
