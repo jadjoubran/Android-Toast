@@ -1,21 +1,27 @@
 /*
-     toast.css
-     (c) 2013 Jad Joubran, Nader Dagher
-     toast.css may be freely distributed under the MIT license.
+toast.css
+(c) 2013 Jad Joubran, Nader Dagher
+toast.css may be freely distributed under the MIT license.
 */
 
 
-#android_toast{
+#android_toast_container{
+	width: 100%;
 	position: fixed;
 	bottom: 12%;
-	left: 50%;
+	left: 0;
+}
+
+#android_toast{
 	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: rgb(48, 52, 55);
 	color: rgb(245, 245, 245);
 	font-size: 13px;
 	padding: 5px;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
 	opacity: 0.95;
 	-webkit-box-shadow:  1px 2px 2px 1px rgba(34, 34, 34, 1);
 	box-shadow:  1px 2px 2px 1px rgba(34, 34, 34, 1);
@@ -28,6 +34,10 @@
 	color: rgb(81, 180, 210);
 	font-weight: bold;
 	font-style: normal;
+}
+
+.android_toast_top{
+	top: 12%;
 }
 
 

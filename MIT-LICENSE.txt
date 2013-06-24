@@ -1,4 +1,4 @@
-Copyright (c) 2013 Jad Joubran
+Copyright (c) 2013 Jad Joubran, Nader Dagher
 https://github.com/jadjoubran/Android-Toast
 
 Permission is hereby granted, free of charge, to any person obtaining

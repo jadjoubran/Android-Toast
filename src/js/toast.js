@@ -4,55 +4,91 @@ Toast.js
 toast.js may be freely distributed under the MIT license.
 */
 
-var android_toast_timeout_id = null;
 
-function android_toast( message ){
-	if ( ! message ){
+
+function Android_Toast(){
+
+	this.timeout_id = null;
+	this.duration = 3000;
+	this.content = '';
+	this.position = 'bottom';
+}
+
+Android_Toast.prototype.set_duration = function( duration ){
+	this.duration = parseInt( duration );
+};
+
+Android_Toast.prototype.set_content = function( content ){
+	this.content = content;
+};
+
+Android_Toast.prototype.set_position = function( position ){
+	position = position.toLowerCase();
+	switch ( position ){
+		case "top":
+		case "bottom":
+		this.position = position;
+		break;
+
+		default:
+		this.position = 'bottom';
+		break;
+	}
+};
+
+Android_Toast.prototype.show = function(){
+	if ( ! this.content ){
 		return false;
 	}
+	clearTimeout( this.timeout_id );
 
 	var body = document.getElementsByTagName('body')[0];
 
-	var previous_toast = document.getElementById("android_toast");
-	clearTimeout( android_toast_timeout_id );
+	var previous_toast = document.getElementById("android_toast_container");
 	if ( previous_toast ){
 		body.removeChild( previous_toast );
 	}
 
+	var toast_container = document.createElement("div");
+	toast_container.setAttribute('id', 'android_toast_container');
+	toast_container.setAttribute('class', 'android_toast_fadein');
+	if ( this.position == 'top' ){
+		toast_container.setAttribute('class', 'android_toast_fadein android_toast_top')
+	}
+	body.appendChild( toast_container );
+
 	var toast = document.createElement("div");
-	toast.setAttribute('class', 'android_toast_fadein');
 	toast.setAttribute('id', 'android_toast');
-	toast.innerHTML = message;
-	//fix center positionning. Cannot use a fixed width in order to support small devices
-	toast.style.marginLeft = -parseInt(( get_window_width() * 0.8 / 2));
-	body.appendChild( toast );
+	toast.innerHTML = this.content;
+	toast_container.appendChild( toast );
 
-	android_toast_timeout_id = setTimeout( android_toast_remove, 3000 );
-}
 
-function android_toast_remove(){
+	this.timeout_id = setTimeout( this.hide, this.duration );
+	return true;
+};
 
-	var toast = document.getElementById('android_toast');
+Android_Toast.prototype.hide = function(){
+	var toast_container = document.getElementById('android_toast_container');
 
-	//remove android_toast_fadein and add androidd_toast_fadeout
-	toast.className = 'android_toast_fadeout';
+	if ( ! toast_container ){
+		return false;
+	}
 
-	toast.addEventListener('webkitAnimationEnd', function(){
-		toast.parentNode.removeChild( toast );
+	clearTimeout( this.timeout_id );
+
+	//add androidd_toast_fadeout
+	toast_container.className += ' android_toast_fadeout';
+
+	toast_container.addEventListener('webkitAnimationEnd', function(){
+		toast_container.parentNode.removeChild( toast_container );
 	});
-}
+	return true;
+};
 
 
-//from http://stackoverflow.com/questions/1038727/how-to-get-browser-width-using-javascript-code
-function get_window_width() {
-	if (self.innerWidth) {
-		return self.innerWidth;
-	}
-	else if (document.documentElement && document.documentElement.clientHeight){
-		return document.documentElement.clientWidth;
-	}
-	else if (document.body) {
-		return document.body.clientWidth;
-	}
-	return 0;
-}
+//TODO:
+/*
+JavaScript API Documentation in readme.md
+Fix javascript error
+Fix flickering when calling toast.show() before it was hidden?
+*/

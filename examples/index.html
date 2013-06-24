@@ -16,16 +16,25 @@
 
 	<h1>Android Toast Example</h1>
 
-	<span class="clickable" id="example1">Click here</span> for example 1
+	<div class="clickable" id="example1">Click here for example 1 (defaults):</div>
+	<code>
+		var toast1 = new Android_Toast();<br />
+		toast1.set_content('Please check your connection and try again.');<br />
+		toast1.show();<br />
+	</code>
 	<br />
 	<br />
-	<span class="clickable" id="example2">Click here</span> for example 2
+	<div class="clickable" id="example2">Click here for example 2 (customizing position &amp; duration):</div>
+	<code>
+		var toast2 = new Android_Toast();<br />
+		toast2.set_content('Connected to Wi-Fi network <em>Router Name</em>');<br />
+		toast2.set_duration(4000);<br />
+		toast2.set_position('top');<br />
+		toast2.show();<br />
+	</code>
 	<br />
 	<br />
-	Note that the example is best viewed at a width smaller than 600px (to simulate a phone device)
-	<br />
-	<br />
-	And whenever you resize the browser while the toast is open, the positionning will get distorted.
+	Note that these examples are best viewed at a width smaller than 600px (to simulate a mobile device)
 	<br />
 	<br />
 
@@ -37,11 +46,17 @@
 
 
 	function toast_example1(){
-		android_toast('Please check your connection and try again.');
+		var toast1 = new Android_Toast();
+		toast1.set_content('Please check your connection and try again.');
+		toast1.show();
 	}
 
 	function toast_example2(){
-		android_toast('Connected to Wi-Fi network <em>Router Name</em>');
+		var toast2 = new Android_Toast();
+		toast2.set_content('Connected to Wi-Fi network <em>Router Name</em>');
+		toast2.set_duration(4000);
+		toast2.set_position('top');
+		toast2.show();
 	}
 	</script>
 </body>
