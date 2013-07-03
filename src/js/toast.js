@@ -20,7 +20,7 @@ function Android_Toast( options ){
 		if ( options.content ){
 			this.content = options.content;
 		}
-		if ( options.duration ){
+		if ( options.position ){
 			position = options.position.toLowerCase();
 			switch ( position ){
 				case "top":
