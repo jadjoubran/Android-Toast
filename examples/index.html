@@ -18,18 +18,14 @@
 
 	<div class="clickable" id="example1">Click here for example 1 (defaults):</div>
 	<code>
-		var toast1 = new Android_Toast();<br />
-		toast1.set_content('Please check your connection and try again.');<br />
+		var toast1 = new Android_Toast({content: 'Please check your connection and try again.'});<br />
 		toast1.show();<br />
 	</code>
 	<br />
 	<br />
 	<div class="clickable" id="example2">Click here for example 2 (customizing position &amp; duration):</div>
 	<code>
-		var toast2 = new Android_Toast();<br />
-		toast2.set_content('Connected to Wi-Fi network <em>Router Name</em>');<br />
-		toast2.set_duration(4000);<br />
-		toast2.set_position('top');<br />
+		var toast2 = new Android_Toast({content: 'Connected to Wi-Fi network <em>Router Name</em>', duration: 4000, position: 'top'});<br />
 		toast2.show();<br />
 	</code>
 	<br />
@@ -46,16 +42,12 @@
 
 
 	function toast_example1(){
-		var toast1 = new Android_Toast();
-		toast1.set_content('Please check your connection and try again.');
+		var toast1 = new Android_Toast({content: 'Please check your connection and try again.'});
 		toast1.show();
 	}
 
 	function toast_example2(){
-		var toast2 = new Android_Toast();
-		toast2.set_content('Connected to Wi-Fi network <em>Router Name</em>');
-		toast2.set_duration(4000);
-		toast2.set_position('top');
+		var toast2 = new Android_Toast({content: 'Connected to Wi-Fi network <em>Router Name</em>', duration: 4000, position: 'top'});
 		toast2.show();
 	}
 	</script>

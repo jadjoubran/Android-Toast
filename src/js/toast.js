@@ -6,35 +6,36 @@ toast.js may be freely distributed under the MIT license.
 
 
 
-function Android_Toast(){
+function Android_Toast( options ){
 
 	this.timeout_id = null;
 	this.duration = 3000;
 	this.content = '';
 	this.position = 'bottom';
+
+	if ( options && typeof options == "object" ){
+		if ( options.duration ){
+			this.duration = parseInt(options.duration);
+		}
+		if ( options.content ){
+			this.content = options.content;
+		}
+		if ( options.duration ){
+			position = options.position.toLowerCase();
+			switch ( position ){
+				case "top":
+				case "bottom":
+				this.position = position;
+				break;
+
+				default:
+				this.position = 'bottom';
+				break;
+			}
+		}
+	}
 }
 
-Android_Toast.prototype.set_duration = function( duration ){
-	this.duration = parseInt( duration );
-};
-
-Android_Toast.prototype.set_content = function( content ){
-	this.content = content;
-};
-
-Android_Toast.prototype.set_position = function( position ){
-	position = position.toLowerCase();
-	switch ( position ){
-		case "top":
-		case "bottom":
-		this.position = position;
-		break;
-
-		default:
-		this.position = 'bottom';
-		break;
-	}
-};
 
 Android_Toast.prototype.show = function(){
 	if ( ! this.content ){
@@ -84,11 +85,3 @@ Android_Toast.prototype.hide = function(){
 	});
 	return true;
 };
-
-
-//TODO:
-/*
-JavaScript API Documentation in readme.md
-Fix javascript error
-Fix flickering when calling toast.show() before it was hidden?
-*/
