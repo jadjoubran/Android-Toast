@@ -4,7 +4,7 @@ Toast.js
 toast.js may be freely distributed under the MIT license.
 */
 
-(function(){
+;(function(){
 
 	function Android_Toast( options ){
 
