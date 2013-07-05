@@ -34,6 +34,7 @@ toast.js may be freely distributed under the MIT license.
 				}
 			}
 		}
+		this.show();
 	}
 
 

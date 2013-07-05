@@ -7,34 +7,26 @@ Can be used for PhoneGap applications.
 To use Android toast, simply include src/css/toast.css and src/js/toast.js to your project and call the android_toast javascript function (does not require jQuery or any external DOM manipulation library)
 
 	<script>
-		var toast = new Android_Toast();
-		toast.set_content('Please check your connection and try again.');
-		toast.show();
+		var toast1 = new Android_Toast({content: 'Please check your connection and try again.'});<br />
 	</script>
 
 You can also customize the position and the duration:
 
 	<script>
-		var toast = new Android_Toast();
-		toast.set_content('Connected to Wi-Fi network <em>Router Name</em>');
-		toast.set_duration(4000);
-		toast.set_position('top');
-		toast.show();
+		var toast2 = new Android_Toast({content: 'Connected to Wi-Fi network <em>Router Name</em>', duration: 4000, position: 'top'});<br />
 	</script>
 
 
 
 ## JavaScript API
 
-**set_content()** sets the text to be displayed. `<em></em>` text will be highlighted in blue.
+The constructor function accepts 3 options:
 
-**set_duration()** accepts a integer. The toast will disappear after the set duration. Defaults to 3000 (milliseconds).
+**content** sets the text to be displayed. `<em></em>` text will be highlighted in blue.
 
-**set_position()** Either `top` or `bottom`. Determines the position of the toast. Defaults to `bottom`.
+**duration** accepts an integer. The toast will disappear after the set duration. Defaults to 3000 (milliseconds).
 
-**show()** Shows the Toast
-
-**hide()** Hides and removes the Toast. It is called manually at the specified duration.
+**position** Either `top` or `bottom`. Determines the position of the toast. Defaults to `bottom`.
 
 
 ## License
