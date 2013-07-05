@@ -86,7 +86,7 @@ toast.js may be freely distributed under the MIT license.
 		return true;
 	};
 
-	//make it available ..
+	//expose the Android_Toast object to Window
 	window.Android_Toast = Android_Toast;
 
 })();
