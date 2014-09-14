@@ -1,6 +1,0 @@
-/*
-toast.min.css
-(c) 2014 Jad Joubran
-toast.css may be freely distributed under the MIT license.
-*/
-#android_toast_container { width:100%; position:fixed; bottom:12%; left:0; }  #android_toast { width:80%; margin-left:auto; margin-right:auto; background-color:#303437; color:#f5f5f5; font-size:13px; border-radius:2px; -webkit-border-radius:2px; opacity:0.95; -webkit-box-shadow:1px 2px 2px 1px rgba(34,34,34,1); box-shadow:1px 2px 2px 1px rgba(34,34,34,1); text-align:center; font-family:Roboto, sans-serif; padding:5px; }  #android_toast em { color:#51b4d2; font-weight:700; font-style:normal; }  .android_toast_top { top:12%; }  .android_toast_fadein { animation:android_toast_fadein 1s ease; -webkit-animation:android_toast_fadein 1s ease; }  .android_toast_fadeout { animation:android_toast_fadeout 1s ease; -webkit-animation:android_toast_fadeout 1s ease; animation-fill-mode:forwards; -webkit-animation-fill-mode:forwards; }  to { opacity:0; -webkit-opacity:0; }

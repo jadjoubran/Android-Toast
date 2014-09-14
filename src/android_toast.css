@@ -1,9 +1,7 @@
 /*
-toast.css
+Android-Toast
 (c) 2013-2014 Jad Joubran
-toast.css may be freely distributed under the MIT license.
 */
-
 
 #android_toast_container{
 	width: 100%;
@@ -29,7 +27,6 @@ toast.css may be freely distributed under the MIT license.
 	font-family: Roboto, sans-serif;
 }
 
-/* For blue text (usually used at the end) */
 #android_toast em{
 	color: rgb(81, 180, 210);
 	font-weight: bold;
@@ -38,6 +35,7 @@ toast.css may be freely distributed under the MIT license.
 
 .android_toast_top{
 	top: 12%;
+	bottom: auto !important;
 }
 
 
