@@ -17,6 +17,15 @@ You can also customize the position and the duration:
 	</script>
 
 
+## Installation
+
+Package is available through bower:
+
+    bower install android-toast
+
+
+Or you can simply include the `dist/android_toast.min.js` and `dist/android_toast.min.css` files in your document.
+
 
 ## JavaScript API
 
