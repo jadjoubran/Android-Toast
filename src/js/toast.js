@@ -1,6 +1,6 @@
 /*
 Toast.js
-(c) 2013 Jad Joubran, Nader Dagher
+(c) 2013-2014 Jad Joubran
 toast.js may be freely distributed under the MIT license.
 */
 
@@ -80,7 +80,7 @@ toast.js may be freely distributed under the MIT license.
 
 		toast_container.className += ' android_toast_fadeout';
 
-		toast_container.addEventListener('webkitAnimationEnd', function(){
+		toast_container.addEventListener('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function(){
 			toast_container.parentNode.removeChild( toast_container );
 		});
 		return true;
