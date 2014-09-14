@@ -77,6 +77,10 @@ Android-Toast
 		toast_container.className += ' android_toast_fadeout';
 
 		function remove_toast(){
+			var toast_container = document.getElementById('android_toast_container');
+			if ( !toast_container ){
+				return false;
+			}
 			toast_container.parentNode.removeChild( toast_container );
 		}
 
