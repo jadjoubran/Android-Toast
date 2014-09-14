@@ -13,25 +13,23 @@ toast.js may be freely distributed under the MIT license.
 		this.content = '';
 		this.position = 'bottom';
 
-		if ( options && typeof options == "object" ){
-			if ( options.duration ){
-				this.duration = parseInt(options.duration);
-			}
-			if ( options.content ){
-				this.content = options.content;
-			}
-			if ( options.position ){
-				position = options.position.toLowerCase();
-				switch ( position ){
-					case "top":
-					case "bottom":
-					this.position = position;
-					break;
+		if ( !options || typeof options != 'object' ){
+			return false;
+		}
 
-					default:
-					this.position = 'bottom';
-					break;
-				}
+		if ( options.duration ){
+			this.duration = parseFloat(options.duration);
+		}
+		if ( options.content ){
+			this.content = options.content;
+		}
+
+		if ( options.position ){
+			position = options.position.toLowerCase();
+			if ( position == 'top' || position == 'bottom' ){
+				this.position = position;
+			}else{
+				this.position = 'bottom';
 			}
 		}
 		this.show();
@@ -39,31 +37,30 @@ toast.js may be freely distributed under the MIT license.
 
 
 	Android_Toast.prototype.show = function(){
-		if ( ! this.content ){
+		if ( !this.content ){
 			return false;
 		}
 		clearTimeout( this.timeout_id );
 
 		var body = document.getElementsByTagName('body')[0];
 
-		var previous_toast = document.getElementById("android_toast_container");
-		if ( previous_toast ){
-			body.removeChild( previous_toast );
+		var previous_toast = document.getElementById('android_toast_container');
+		previous_toast && body.removeChild( previous_toast );
+
+		var classes = 'android_toast_fadein';
+		if ( this.position == 'top'){
+			classes = 'android_toast_fadein android_toast_top';
 		}
 
-		var toast_container = document.createElement("div");
+		var toast_container = document.createElement('div');
 		toast_container.setAttribute('id', 'android_toast_container');
-		toast_container.setAttribute('class', 'android_toast_fadein');
-		if ( this.position == 'top' ){
-			toast_container.setAttribute('class', 'android_toast_fadein android_toast_top')
-		}
+		toast_container.setAttribute('class', classes);
 		body.appendChild( toast_container );
 
-		var toast = document.createElement("div");
+		var toast = document.createElement('div');
 		toast.setAttribute('id', 'android_toast');
 		toast.innerHTML = this.content;
 		toast_container.appendChild( toast );
-
 
 		this.timeout_id = setTimeout( this.hide, this.duration );
 		return true;
@@ -72,7 +69,7 @@ toast.js may be freely distributed under the MIT license.
 	Android_Toast.prototype.hide = function(){
 		var toast_container = document.getElementById('android_toast_container');
 
-		if ( ! toast_container ){
+		if ( !toast_container ){
 			return false;
 		}
 
