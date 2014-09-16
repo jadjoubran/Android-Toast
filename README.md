@@ -2,7 +2,7 @@
 
 An HTML5 replication of the Native Android Toast http://developer.android.com/guide/topics/ui/notifiers/toasts.html
 
-Can be used for PhoneGap applications.
+Compatible with PhoneGap applications.
 
 To use Android toast, simply include src/css/toast.css and src/js/toast.js to your project and call the android_toast javascript function (does not require jQuery or any external DOM manipulation library)
 
