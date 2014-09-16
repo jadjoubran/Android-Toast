@@ -43,8 +43,12 @@ The constructor function accepts 3 options:
 Check the MIT-LICENSE.txt file
 
 
-## Contributor
+## Contributors
 
 http://www.eTobb.com 's first Open Source contribution.
 
 Developed by Jad Joubran [@JoubranJad](https://twitter.com/joubranjad)
+
+Other contributors:
+
+[Patsy Issa](https://github.com/Patsy-issa)
