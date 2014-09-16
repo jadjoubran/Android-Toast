@@ -2,32 +2,32 @@
 Android-Toast
 (c) 2013-2014 Jad Joubran
 */
+(function() {
+	"use strict";
 
-;(function(){
-
-	function Android_Toast( options ){
-
+	function Android_Toast(options) {
+		var position;
 		this.timeout_id = null;
 		this.duration = 3000;
 		this.content = '';
 		this.position = 'bottom';
 
-		if ( !options || typeof options != 'object' ){
+		if (!options || typeof options != 'object') {
 			return false;
 		}
 
-		if ( options.duration ){
+		if (options.duration) {
 			this.duration = parseFloat(options.duration);
 		}
-		if ( options.content ){
+		if (options.content) {
 			this.content = options.content;
 		}
 
-		if ( options.position ){
+		if (options.position) {
 			position = options.position.toLowerCase();
-			if ( position == 'top' || position == 'bottom' ){
+			if (position === 'top' || position === 'bottom') {
 				this.position = position;
-			}else{
+			} else {
 				this.position = 'bottom';
 			}
 		}
@@ -35,53 +35,55 @@ Android-Toast
 	}
 
 
-	Android_Toast.prototype.show = function(){
-		if ( !this.content ){
+	Android_Toast.prototype.show = function() {
+		if (!this.content) {
 			return false;
 		}
-		clearTimeout( this.timeout_id );
+		clearTimeout(this.timeout_id);
 
 		var body = document.getElementsByTagName('body')[0];
 
 		var previous_toast = document.getElementById('android_toast_container');
-		previous_toast && body.removeChild( previous_toast );
+		if (previous_toast) {
+			body.removeChild(previous_toast);
+		}
 
 		var classes = 'android_toast_fadein';
-		if ( this.position == 'top'){
+		if (this.position === 'top') {
 			classes = 'android_toast_fadein android_toast_top';
 		}
 
 		var toast_container = document.createElement('div');
 		toast_container.setAttribute('id', 'android_toast_container');
 		toast_container.setAttribute('class', classes);
-		body.appendChild( toast_container );
+		body.appendChild(toast_container);
 
 		var toast = document.createElement('div');
 		toast.setAttribute('id', 'android_toast');
 		toast.innerHTML = this.content;
-		toast_container.appendChild( toast );
+		toast_container.appendChild(toast);
 
-		this.timeout_id = setTimeout( this.hide, this.duration );
+		this.timeout_id = setTimeout(this.hide, this.duration);
 		return true;
 	};
 
-	Android_Toast.prototype.hide = function(){
+	Android_Toast.prototype.hide = function() {
 		var toast_container = document.getElementById('android_toast_container');
 
-		if ( !toast_container ){
+		if (!toast_container) {
 			return false;
 		}
 
-		clearTimeout( this.timeout_id );
+		clearTimeout(this.timeout_id);
 
 		toast_container.className += ' android_toast_fadeout';
 
-		function remove_toast(){
+		function remove_toast() {
 			var toast_container = document.getElementById('android_toast_container');
-			if ( !toast_container ){
+			if (!toast_container) {
 				return false;
 			}
-			toast_container.parentNode.removeChild( toast_container );
+			toast_container.parentNode.removeChild(toast_container);
 		}
 
 		toast_container.addEventListener('webkitAnimationEnd', remove_toast);
