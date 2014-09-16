@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Android-toast by jadjoubran</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Android-toast</h1>
+        <p>An HTML5 replication of the Native Android Toast http://developer.android.com/guide/topics/ui/notifiers/toasts.html</p>
+
+        <p class="view"><a href="https://github.com/jadjoubran/Android-Toast">View the Project on GitHub <small>jadjoubran/Android-Toast</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/jadjoubran/Android-Toast/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jadjoubran/Android-Toast/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jadjoubran/Android-Toast">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="android-toast" class="anchor" href="#android-toast"><span class="octicon octicon-link"></span></a>Android-Toast</h1>
+
+<p>An HTML5 replication of the Native Android Toast <a href="http://developer.android.com/guide/topics/ui/notifiers/toasts.html">http://developer.android.com/guide/topics/ui/notifiers/toasts.html</a></p>
+
+<p>Compatible be used for PhoneGap applications.</p>
+
+<p>To use Android toast, simply include src/css/toast.css and src/js/toast.js to your project and call the android_toast javascript function (does not require jQuery or any external DOM manipulation library)</p>
+
+<pre><code>&lt;script&gt;
+    var toast1 = new Android_Toast({content: 'Please check your connection and try again.'});&lt;br /&gt;
+&lt;/script&gt;
+</code></pre>
+
+<p>You can also customize the position and the duration:</p>
+
+<pre><code>&lt;script&gt;
+    var toast2 = new Android_Toast({content: 'Connected to Wi-Fi network &lt;em&gt;Router Name&lt;/em&gt;', duration: 4000, position: 'top'});&lt;br /&gt;
+&lt;/script&gt;
+</code></pre>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Package is available through bower:</p>
+
+<pre><code>bower install android-toast
+</code></pre>
+
+<p>Or you can simply include the <code>dist/android_toast.min.js</code> and <code>dist/android_toast.min.css</code> files in your document.</p>
+
+<h2>
+<a name="javascript-api" class="anchor" href="#javascript-api"><span class="octicon octicon-link"></span></a>JavaScript API</h2>
+
+<p>The constructor function accepts 3 options:</p>
+
+<p><strong>content</strong> sets the text to be displayed. <code>&lt;em&gt;&lt;/em&gt;</code> text will be highlighted in blue.</p>
+
+<p><strong>duration</strong> accepts an integer. The toast will disappear after the set duration. Defaults to 3000 (milliseconds).</p>
+
+<p><strong>position</strong> Either <code>top</code> or <code>bottom</code>. Determines the position of the toast. Defaults to <code>bottom</code>.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Check the MIT-LICENSE.txt file</p>
+
+<h2>
+<a name="contributor" class="anchor" href="#contributor"><span class="octicon octicon-link"></span></a>Contributor</h2>
+
+<p><a href="http://www.eTobb.com">http://www.eTobb.com</a> 's first Open Source contribution.</p>
+
+<p>Developed by Jad Joubran <a href="https://twitter.com/joubranjad">@JoubranJad</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/jadjoubran">jadjoubran</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
