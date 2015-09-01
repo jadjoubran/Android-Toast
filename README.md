@@ -9,13 +9,13 @@ Compatible with PhoneGap applications.
 To use Android toast, simply include src/css/toast.css and src/js/toast.js to your project and call the android_toast javascript function (does not require jQuery or any external DOM manipulation library)
 
 	<script>
-		var toast1 = new Android_Toast({content: 'Please check your connection and try again.'});<br />
+		var toast1 = new Android_Toast({content: 'Please check your connection and try again.'});
 	</script>
 
 You can also customize the position and the duration:
 
 	<script>
-		var toast2 = new Android_Toast({content: 'Connected to Wi-Fi network <em>Router Name</em>', duration: 4000, position: 'top'});<br />
+		var toast2 = new Android_Toast({content: 'Connected to Wi-Fi network <em>Router Name</em>', duration: 4000, position: 'top'});
 	</script>
 
 
