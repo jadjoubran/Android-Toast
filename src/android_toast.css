@@ -8,6 +8,7 @@ Android-Toast
 	position: fixed;
 	bottom: 12%;
 	left: 0;
+        pointer-events:none;
 }
 
 #android_toast{
